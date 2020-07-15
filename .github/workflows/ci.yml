@@ -42,6 +42,8 @@ jobs:
           tag_with_sha: true
       - name: Create prerelease
         uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           prerelease: true
           # ideally we'd calculate these with conventional commits
